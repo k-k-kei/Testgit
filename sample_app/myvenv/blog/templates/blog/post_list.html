@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/post_list_style.css' %}"/>
+
+<html>
+ <head>
+    <h1>Hi there!  It works!</h1>
+    <h3>This is first development for django</h3>
+ </head>
+    <!-- post の内容 -->
+    {% for post in posts %}
+      <div  style="margin-top:50px;">
+        <h2>title:<a href="">{{ post.title }}</a></h2>
+        <p>published: {{ post.published_date}}</p>
+        <p>{{ post.text | linebreaks }}</p>
+      </div>
+    {% endfor %}
+  </html>
